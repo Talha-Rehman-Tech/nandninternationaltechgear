@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "TechGear | Premium Mobile Accessories",
-  description: "Shop high-quality chargers, cables, audio, and more.",
+  title: "NandN Tech Gear International | Premium Mobile Accessories",
+  description: "Shop high-quality chargers, cables, audio, and more from NandN Tech Gear International.",
 };
 
 export default function RootLayout({

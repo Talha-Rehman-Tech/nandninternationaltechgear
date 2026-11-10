@@ -47,16 +47,53 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="bg-white/85 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100 shadow-sm transition-all">
+      {/* Top Announcement Bar */}
+      <div className="bg-zinc-950 text-white text-[11px] sm:text-xs py-1.5 px-4 border-b border-zinc-800">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <span className="inline-flex items-center gap-1.5 text-zinc-300 font-medium">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              NandN International Tech Gear Official Store
+            </span>
+          </div>
+          <div className="hidden md:flex items-center gap-4 text-zinc-400 text-[11px]">
+            <span>✓ Cash on Delivery</span>
+            <span className="text-zinc-600">•</span>
+            <span>⚡ Fast Nationwide Delivery</span>
+            <span className="text-zinc-600">•</span>
+            <span>🛡️ 100% Genuine Warranty</span>
+          </div>
+        </div>
+      </div>
+
+      <header className="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100 shadow-xs transition-all">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 sm:h-20">
 
-            {/* Logo */}
+            {/* Logo: NandN badge + Tech Gear on side + International below */}
             <div className="flex-shrink-0 flex items-center">
-              <Link href="/" className="text-xl font-bold tracking-tight text-gray-900 flex items-center gap-2 group">
-                <span className="bg-black text-white px-2.5 py-1 rounded-lg text-sm
-                 md:text-base font-extrabold group-hover:bg-gray-800 transition-colors">Tech</span>
-                <span className="text-gray-900 text-lg md:text-xl font-black tracking-wider">GEAR</span>
+              <Link
+                href="/"
+                className="group flex items-center gap-2.5 transition-transform hover:scale-[1.02] duration-150 select-none"
+                aria-label="NandN Tech Gear International Home"
+              >
+                {/* NandN Logo Badge / Emblem */}
+                <div className="relative flex items-center justify-center bg-black text-white px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-xl font-black text-sm sm:text-base tracking-tight shadow-sm border border-zinc-800 group-hover:bg-zinc-900 group-hover:border-zinc-700 transition-all">
+                  <span className="bg-gradient-to-r from-white via-zinc-100 to-zinc-300 bg-clip-text text-transparent">
+                    NandN
+                  </span>
+                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-blue-500 ml-1 animate-pulse"></span>
+                </div>
+
+                {/* Brand Name on side & International below */}
+                <div className="flex flex-col justify-center leading-none">
+                  <span className="text-gray-950 text-sm sm:text-base font-black tracking-wider uppercase group-hover:text-blue-600 transition-colors">
+                    Tech Gear
+                  </span>
+                  <span className="text-[8px] sm:text-[9.5px] tracking-[0.24em] text-gray-500 font-bold uppercase mt-0.5">
+                    International
+                  </span>
+                </div>
               </Link>
             </div>
 
@@ -170,11 +207,32 @@ export default function Navbar() {
         <div className="fixed inset-0 z-[60] bg-black/40 backdrop-blur-sm md:hidden flex justify-end">
           <div className="w-4/5 max-w-sm bg-white h-full shadow-2xl flex flex-col animate-in slide-in-from-right duration-300">
             <div className="flex justify-between items-center px-5 h-16 border-b border-gray-100">
-              <Link href="/" className="text-xl font-bold tracking-tight text-gray-900 flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
-                <span className="bg-black text-white px-2 py-0.5 rounded-md text-sm">Tech</span>
-                <span className="text-black font-black">GEAR</span>
+              <Link
+                href="/"
+                className="group flex items-center gap-2"
+                onClick={() => setMobileMenuOpen(false)}
+                aria-label="NandN Tech Gear International Home"
+              >
+                <div className="flex items-center justify-center bg-black text-white px-2 py-0.5 rounded-lg font-black text-sm tracking-tight border border-zinc-800">
+                  <span className="bg-gradient-to-r from-white via-zinc-100 to-zinc-300 bg-clip-text text-transparent">
+                    NandN
+                  </span>
+                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-blue-500 ml-1"></span>
+                </div>
+                <div className="flex flex-col justify-center leading-none">
+                  <span className="text-gray-950 text-sm font-black tracking-wider uppercase">
+                    Tech Gear
+                  </span>
+                  <span className="text-[8px] tracking-[0.22em] text-gray-500 font-bold uppercase mt-0.5">
+                    International
+                  </span>
+                </div>
               </Link>
-              <button onClick={() => setMobileMenuOpen(false)} className="text-gray-500 hover:text-black p-1 rounded-lg">
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-gray-500 hover:text-black p-1.5 rounded-lg hover:bg-gray-100 transition-colors"
+                aria-label="Close Menu"
+              >
                 <X className="w-6 h-6" />
               </button>
             </div>
